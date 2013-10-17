@@ -1,0 +1,11 @@
+{
+  "name": "angular-todo",
+  "version": "0.0.1",
+  "devDependencies": {
+    "angular": "~1.2",
+    "angular-route": "~1.2.0-rc.3",
+    "bootstrap": "~3.0",
+    "angular-bootstrap": "~0.6.0"
+  },
+  "dependencies": {}
+}
