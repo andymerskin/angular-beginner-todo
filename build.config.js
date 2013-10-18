@@ -64,7 +64,8 @@ module.exports = {
     js: [
       'vendor/angular/angular.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'vendor/angular-route/angular-route.min.js'
+      'vendor/angular-route/angular-route.min.js',
+      'vendor/angular-ui-utils/modules/keypress/keypress.js'
     ],
     css: [
     ],

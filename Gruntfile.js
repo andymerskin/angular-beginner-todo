@@ -348,7 +348,7 @@ module.exports = function ( grunt ) {
     /**
      * The Karma configurations.
      */
-    karma: {
+   /* karma: {
       options: {
         configFile: '<%= build_dir %>/karma-unit.js'
       },
@@ -359,7 +359,7 @@ module.exports = function ( grunt ) {
       continuous: {
         singleRun: true
       }
-    },
+    },*/
 
     /**
      * The `index` task compiles the `index.html` file as a Grunt template. CSS
@@ -404,7 +404,7 @@ module.exports = function ( grunt ) {
      * This task compiles the karma template so that changes to its file array
      * don't have to be managed manually.
      */
-    karmaconfig: {
+    /*karmaconfig: {
       unit: {
         dir: '<%= build_dir %>',
         src: [ 
@@ -414,7 +414,7 @@ module.exports = function ( grunt ) {
           '<%= test_files.js %>'
         ]
       }
-    },
+    },*/
 
     /**
      * And for rapid development, we have a watch set up that checks to see if
@@ -457,7 +457,9 @@ module.exports = function ( grunt ) {
         files: [ 
           '<%= app_files.js %>'
         ],
-        tasks: [ 'jshint:src', 'karma:unit:run', 'copy:build_appjs' ]
+        tasks: [ 'jshint:src',
+        // 'karma:unit:run',
+        'copy:build_appjs' ]
       },
 
       /**
@@ -468,7 +470,9 @@ module.exports = function ( grunt ) {
         files: [ 
           '<%= app_files.coffee %>'
         ],
-        tasks: [ 'coffeelint:src', 'coffee:source', 'karma:unit:run', 'copy:build_appjs' ]
+        tasks: [ 'coffeelint:src', 'coffee:source', 
+        // 'karma:unit:run',
+        'copy:build_appjs' ]
       },
 
       /**
@@ -517,7 +521,9 @@ module.exports = function ( grunt ) {
         files: [
           '<%= app_files.jsunit %>'
         ],
-        tasks: [ 'jshint:test', 'karma:unit:run' ],
+        tasks: [ 'jshint:test' 
+        // 'karma:unit:run' 
+        ],
         options: {
           livereload: false
         }
@@ -531,7 +537,9 @@ module.exports = function ( grunt ) {
         files: [
           '<%= app_files.coffeeunit %>'
         ],
-        tasks: [ 'coffeelint:test', 'karma:unit:run' ],
+        tasks: [ 'coffeelint:test'
+        // 'karma:unit:run'
+        ],
         options: {
           livereload: false
         }
@@ -549,7 +557,9 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build', 
+    // 'karma:unit'
+    'delta' ] );
 
   /**
    * The default task is to build and compile.
